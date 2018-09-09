@@ -1,0 +1,73 @@
+package pl.coderslab;
+
+import org.mindrot.jbcrypt.BCrypt;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class User {
+
+    private int id = 0;
+    private String username;
+    private String password;
+    private String email;
+
+    public	User(String	username,	String	email,	String	password)	{
+        this.username	=	username;
+        this.email	=	email;
+        this.setPassword(password);
+    }
+    public User(){}
+    public int getId(){
+        return id;
+    }
+
+    public void setUsername(String username){
+        this.username=username;
+    }
+    public String getUsername(){
+        return username;
+    }
+    public	void	setPassword(String	password)	{
+        this.password	=	BCrypt.hashpw(password,	BCrypt.gensalt());
+    }
+    public String getPassword(){
+        return password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public	void	saveToDB(Connection conn)	throws SQLException {
+        if	(this.id	==	0)	{
+            String	sql	=	"INSERT	INTO User(username,	email,	password)	VALUES	(?,	?,	?)";
+            String	generatedColumns[]	=	{	"ID"	};
+            PreparedStatement preparedStatement;
+            preparedStatement	=	conn.prepareStatement(sql,	generatedColumns);
+            preparedStatement.setString(1,	this.username);
+            preparedStatement.setString(2,	this.email);
+            preparedStatement.setString(3,	this.password);
+            preparedStatement.executeUpdate();
+            ResultSet rs	=	preparedStatement.getGeneratedKeys();
+            if	(rs.next())	{
+                this.id	=	rs.getInt(1);
+            }
+        }else	{
+            String	sql	=	"UPDATE	User	SET	username=?,	email=?,	password=?	where	id	=	?";
+            PreparedStatement	preparedStatement;
+            preparedStatement	=	conn.prepareStatement(sql);
+            preparedStatement.setString(1,	this.username);
+            preparedStatement.setString(2,	this.email);
+            preparedStatement.setString(3,	this.password);
+            preparedStatement.setInt(4,	this.id);
+            preparedStatement.executeUpdate();
+        }
+    }
+}
