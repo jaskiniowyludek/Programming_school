@@ -14,11 +14,22 @@ public class User {
     private String username;
     private String password;
     private String email;
+    private int user_group;
 
-    public	User(String	username,	String	email,	String	password)	{
+    public int getUser_group() {
+        return user_group;
+    }
+
+    public void setUser_group(int user_group) {
+        this.user_group = user_group;
+    }
+
+    public	User(String	username, String	email, String	password, int user_group)	{
         this.username	=	username;
         this.email	=	email;
         this.setPassword(password);
+        this.user_group = user_group;
+
     }
     public User(){}
     public int getId(){
@@ -48,26 +59,28 @@ public class User {
 
     public	void	saveToDB(Connection conn)	throws SQLException {
         if	(this.id	==	0)	{
-            String	sql	=	"INSERT	INTO User(username,	email,	password)	VALUES	(?,	?,	?)";
+            String	sql	=	"INSERT	INTO User(username,	email,	password, user_group_id)	VALUES	(?,	?,	?, ?)";
             String	generatedColumns[]	=	{	"ID"	};
             PreparedStatement preparedStatement;
             preparedStatement	=	conn.prepareStatement(sql,	generatedColumns);
             preparedStatement.setString(1,	this.username);
             preparedStatement.setString(2,	this.email);
             preparedStatement.setString(3,	this.password);
+            preparedStatement.setInt(4, this.user_group);
             preparedStatement.executeUpdate();
             ResultSet rs	=	preparedStatement.getGeneratedKeys();
             if	(rs.next())	{
                 this.id	=	rs.getInt(1);
             }
         }else	{
-            String	sql	=	"UPDATE	User	SET	username=?,	email=?,	password=?	where	id	=	?";
+            String	sql	=	"UPDATE	User	SET	username=?,	email=?,	password=?, user_group_id=?	where	id	=	?";
             PreparedStatement	preparedStatement;
             preparedStatement	=	conn.prepareStatement(sql);
             preparedStatement.setString(1,	this.username);
             preparedStatement.setString(2,	this.email);
             preparedStatement.setString(3,	this.password);
-            preparedStatement.setInt(4,	this.id);
+            preparedStatement.setInt(4, this.user_group);
+            preparedStatement.setInt(5,	this.id);
             preparedStatement.executeUpdate();
         }
     }
