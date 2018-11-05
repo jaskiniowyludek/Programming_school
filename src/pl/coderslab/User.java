@@ -88,7 +88,8 @@ public class User {
     }
     static	public	User[]	loadAllUsers(Connection	conn)	throws	SQLException	{
         ArrayList<User> users	=	new	ArrayList<User>();
-        String	sql	=	"SELECT	*	FROM	Users";	PreparedStatement	preparedStatement;
+        String	sql	=	"SELECT	*	FROM	User";
+        PreparedStatement	preparedStatement;
         preparedStatement	=	conn.prepareStatement(sql);
         ResultSet	resultSet	=	preparedStatement.executeQuery();
         while	(resultSet.next())	{
@@ -98,6 +99,18 @@ public class User {
             loadedUser.password	=	resultSet.getString("password");
             loadedUser.email	=	resultSet.getString("email");
             users.add(loadedUser);}
-        User[]	uArray	=	new	User[users.size()];	uArray	=	users.toArray(uArray);
-        return	uArray;}
+        User[]	uArray	=	new	User[users.size()];
+        uArray	=	users.toArray(uArray);
+        return	uArray;
+    }
+    public	void	delete(Connection	conn)	throws	SQLException	{
+        if	(this.id	!=	0)	{
+            String	sql	=	"DELETE	FROM	User	WHERE	id=	?";
+            PreparedStatement	preparedStatement;
+            preparedStatement	=	conn.prepareStatement(sql);
+            preparedStatement.setInt(1,	this.id);
+            preparedStatement.executeUpdate();
+            this.id=0;
+        }
+    }
 }

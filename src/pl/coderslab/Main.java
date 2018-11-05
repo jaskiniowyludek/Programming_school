@@ -23,8 +23,18 @@ public class Main {
 //            user2.saveToDB(conn);
             User userD = User.loadUserById(conn,4);
             System.out.println("Id: "+userD.getId()+" name: "+userD.getUsername()+"mail: "+userD.getEmail());
-            User userNE = User.loadUserById(conn, 10);
-            System.out.println(userNE.getUsername());
+//            userD.setUsername("user1_name_modified");
+//            userD.saveToDB(conn);
+            userD.delete(conn);
+            System.out.println("id userD: "+userD.getId());
+//            User userNE = User.loadUserById(conn, 10);
+//            System.out.println(userNE.getUsername());
+            User[] users = User.loadAllUsers(conn);
+            int usersLength = users.length;
+            System.out.println("długość tablicy to: "+usersLength);
+            for (User u: users){
+                System.out.println(u.getUsername()+", "+u.getEmail());
+            }
         }catch (SQLException e){
             e.getMessage();
         }
