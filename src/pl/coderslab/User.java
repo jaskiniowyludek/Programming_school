@@ -70,4 +70,19 @@ public class User {
             preparedStatement.executeUpdate();
         }
     }
+    static	public	User	loadUserById(Connection	conn,	int	id)	throws	SQLException	{
+        String	sql	=	"SELECT	*	FROM	User	where	id=?";
+        PreparedStatement	preparedStatement;
+        preparedStatement	=	conn.prepareStatement(sql);
+        preparedStatement.setInt(1,	id);
+        ResultSet	resultSet	=	preparedStatement.executeQuery();
+        if	(resultSet.next())	{
+            User	loadedUser	=	new	User();
+            loadedUser.id	=	resultSet.getInt("id");
+            loadedUser.username	=	resultSet.getString("username");
+            loadedUser.password	=	resultSet.getString("password");
+            loadedUser.email	=	resultSet.getString("email");
+            return	loadedUser;}
+        return	null;
+    }
 }
