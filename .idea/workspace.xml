@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f75109c5-806c-4f88-a6b0-7a2bcee30edb" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pl/coderslab/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/coderslab/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pl/coderslab/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/coderslab/User.java" afterDir="false" />
     </list>
@@ -16,25 +15,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="User.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pl/coderslab/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="356">
-              <caret line="86" column="4" selection-start-line="86" selection-start-column="4" selection-end-line="86" selection-end-column="4" />
+            <state relative-caret-position="366">
+              <caret line="101" column="24" selection-start-line="101" selection-start-column="24" selection-end-line="101" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#743#744#0" expanded="true" />
                 <element signature="e#816#817#0" expanded="true" />
+                <element signature="e#3120#3126#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pl/coderslab/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="103" selection-start-line="23" selection-start-column="103" selection-end-line="23" selection-end-column="103" />
+            <state relative-caret-position="390">
+              <caret line="26" column="51" selection-start-line="26" selection-start-column="51" selection-end-line="26" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -70,8 +70,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/pl/coderslab/SQLHelper.java" />
-        <option value="$PROJECT_DIR$/src/pl/coderslab/User.java" />
         <option value="$PROJECT_DIR$/src/pl/coderslab/Main.java" />
+        <option value="$PROJECT_DIR$/src/pl/coderslab/User.java" />
       </list>
     </option>
   </component>
@@ -173,12 +173,12 @@
       <updated>1536431286207</updated>
       <workItem from="1536431292993" duration="2380000" />
       <workItem from="1536488361461" duration="7568000" />
-      <workItem from="1541414478973" duration="1893000" />
+      <workItem from="1541414478973" duration="2487000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11841000" />
+    <option name="totallyTimeSpent" value="12435000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1217" height="812" extended-state="6" />
@@ -229,6 +229,7 @@
             <element signature="imports" expanded="true" />
             <element signature="e#743#744#0" expanded="true" />
             <element signature="e#816#817#0" expanded="true" />
+            <element signature="e#3120#3126#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -260,6 +261,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/pl/coderslab/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="51" selection-start-line="26" selection-start-column="51" selection-end-line="26" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/pl/coderslab/SQLHelper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -272,22 +283,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pl/coderslab/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="86" column="4" selection-start-line="86" selection-start-column="4" selection-end-line="86" selection-end-column="4" />
+        <state relative-caret-position="366">
+          <caret line="101" column="24" selection-start-line="101" selection-start-column="24" selection-end-line="101" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#743#744#0" expanded="true" />
             <element signature="e#816#817#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pl/coderslab/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="103" selection-start-line="23" selection-start-column="103" selection-end-line="23" selection-end-column="103" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#3120#3126#0" expanded="true" />
           </folding>
         </state>
       </provider>

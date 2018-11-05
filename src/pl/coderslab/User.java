@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class User {
 
@@ -85,4 +86,18 @@ public class User {
             return	loadedUser;}
         return	null;
     }
+    static	public	User[]	loadAllUsers(Connection	conn)	throws	SQLException	{
+        ArrayList<User> users	=	new	ArrayList<User>();
+        String	sql	=	"SELECT	*	FROM	Users";	PreparedStatement	preparedStatement;
+        preparedStatement	=	conn.prepareStatement(sql);
+        ResultSet	resultSet	=	preparedStatement.executeQuery();
+        while	(resultSet.next())	{
+            User	loadedUser	=	new	User();
+            loadedUser.id	=	resultSet.getInt("id");
+            loadedUser.username	=	resultSet.getString("username");
+            loadedUser.password	=	resultSet.getString("password");
+            loadedUser.email	=	resultSet.getString("email");
+            users.add(loadedUser);}
+        User[]	uArray	=	new	User[users.size()];	uArray	=	users.toArray(uArray);
+        return	uArray;}
 }
