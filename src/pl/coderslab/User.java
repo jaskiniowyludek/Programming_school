@@ -96,6 +96,7 @@ public class User {
             loadedUser.username	=	resultSet.getString("username");
             loadedUser.password	=	resultSet.getString("password");
             loadedUser.email	=	resultSet.getString("email");
+            loadedUser.user_group = resultSet.getInt("user_group_id");
             return	loadedUser;}
         return	null;
     }
@@ -111,6 +112,7 @@ public class User {
             loadedUser.username	=	resultSet.getString("username");
             loadedUser.password	=	resultSet.getString("password");
             loadedUser.email	=	resultSet.getString("email");
+            loadedUser.user_group = resultSet.getInt("user_group_id");
             users.add(loadedUser);}
         User[]	uArray	=	new	User[users.size()];
         uArray	=	users.toArray(uArray);

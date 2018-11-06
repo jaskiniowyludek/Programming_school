@@ -9,19 +9,19 @@ public class Solution {
         private Date created;
         private Date updated;
         private String description;
-        private Exercise exercise;
-        private User user;
+        private int exercise_id;
+        private int user_id;
 
         public Solution(){
         }
 
-    public Solution(int id, Date created, Date updated, String description, Exercise exercise, User user) {
+    public Solution(int id, Date created, Date updated, String description, int exercise_id, int user_id) {
         this.id = id;
         this.created = created;
         this.updated = updated;
         this.description = description;
-        this.exercise = exercise;
-        this.user = user;
+        this.exercise_id = exercise_id;
+        this.user_id = user_id;
     }
 
     public int getId(){
@@ -51,20 +51,20 @@ public class Solution {
         this.description = description;
     }
 
-    public Exercise getExercise() {
-        return exercise;
+    public int getExercise() {
+        return exercise_id;
     }
 
-    public void setExercise(Exercise exercise) {
-        this.exercise = exercise;
+    public void setExercise(int exercise_id) {
+        this.exercise_id = exercise_id;
     }
 
-    public User getUser() {
-        return user;
+    public int getUser() {
+        return user_id;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUser(int user_id) {
+        this.user_id = user_id;
     }
     public void saveToDb(Connection conn)throws SQLException{
             if (this.id==0){
@@ -76,8 +76,8 @@ public class Solution {
                 preparedStatement.setDate(1,this.created);
                 preparedStatement.setDate(2, this.updated);
                 preparedStatement.setString(3, this.description);
-                preparedStatement.setInt(4,this.exercise.getId());
-                preparedStatement.setInt(5, this.user.getId());
+                preparedStatement.setInt(4,this.exercise_id);
+                preparedStatement.setInt(5, this.user_id);
                 preparedStatement.executeUpdate();
                 ResultSet rs	=	preparedStatement.getGeneratedKeys();
                 if	(rs.next())	{
@@ -91,8 +91,8 @@ public class Solution {
                 preparedStatement.setDate(1,this.created);
                 preparedStatement.setDate(2, this.updated);
                 preparedStatement.setString(3,	this.description);
-                preparedStatement.setInt(4,this.exercise.getId());
-                preparedStatement.setInt(5, this.user.getId());
+                preparedStatement.setInt(4,this.exercise_id);
+                preparedStatement.setInt(5, this.user_id);
                 preparedStatement.setInt(6,	this.id);
                 preparedStatement.executeUpdate();
             }
@@ -109,8 +109,8 @@ public class Solution {
             loadedSOL.created = resultSet.getDate("created");
             loadedSOL.updated = resultSet.getDate("updated");
             loadedSOL.description = resultSet.getString("description");
-//            loadedSOL.user.setId() = resultSet.getInt("user_id");
-//            loadedSOL.exercise.setId() = resultSet.getInt("exercise_id");
+            loadedSOL.user_id = resultSet.getInt("user_id");
+            loadedSOL.exercise_id = resultSet.getInt("exercise_id");
             solutions.add(loadedSOL);
         }
         Solution[] solutions1 = new Solution[solutions.size()];
@@ -130,8 +130,8 @@ public class Solution {
             loadedSOL.created = resultSet.getDate("created");
             loadedSOL.updated = resultSet.getDate("updated");
             loadedSOL.description = resultSet.getString("description");
-//            loadedSOL.user.setId() = resultSet.getInt("user_id");
-//            loadedSOL.exercise.setId() = resultSet.getInt("exercise_id");
+            loadedSOL.user_id = resultSet.getInt("user_id");
+            loadedSOL.exercise_id = resultSet.getInt("exercise_id");
             return loadedSOL;
         }
         return null;
