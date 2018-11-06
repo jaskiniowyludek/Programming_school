@@ -147,5 +147,46 @@ public class Solution {
             this.id = 0;
         }
     }
-    }
 
+    public static ArrayList<Solution> loadAllByUserId(Connection conn, int userID) throws SQLException{
+            ArrayList<Solution> solutions = new ArrayList<Solution>();
+            String sql = "SELECT * FROM Solution WHERE user_id=?";
+            PreparedStatement preparedStatement;
+            preparedStatement = conn.prepareStatement(sql);
+            preparedStatement.setInt(1, userID);
+            ResultSet rs = preparedStatement.executeQuery();
+            while (rs.next()){
+                Solution foundS = new Solution();
+                foundS.id = rs.getInt("id");
+                foundS.created = rs.getDate("created");
+                foundS.updated = rs.getDate("updated");
+                foundS.description = rs.getString("description");
+                foundS.user_id = rs.getInt("user_id");
+                foundS.exercise_id = rs.getInt("exercise_id");
+                solutions.add(foundS);
+            }
+            return solutions;
+    }
+    public static ArrayList<Solution> loadAllByExerciseId(Connection conn, int exerciseID) throws SQLException{
+        ArrayList<Solution> solutions = new ArrayList<Solution>();
+        String sql = "SELECT * FROM Solution WHERE exercise_id=? SORTED BY created DESC";
+        PreparedStatement preparedStatement;
+        preparedStatement = conn.prepareStatement(sql);
+        preparedStatement.setInt(1, exerciseID);
+        ResultSet rs = preparedStatement.executeQuery();
+        while (rs.next()){
+            Solution foundS = new Solution();
+            foundS.id = rs.getInt("id");
+            foundS.created = rs.getDate("created");
+            foundS.updated = rs.getDate("updated");
+            foundS.description = rs.getString("description");
+            foundS.user_id = rs.getInt("user_id");
+            foundS.exercise_id = rs.getInt("exercise_id");
+            solutions.add(foundS);
+        }
+        return solutions;
+    }
+}
+
+//pobranie	wszystkich	rozwiązań	danego	zadania	posortowanych	od	najnowszego	do	najstarszego
+//(dopisz	metodę	 loadAllByExerciseId 	do	klasy	 Solution )

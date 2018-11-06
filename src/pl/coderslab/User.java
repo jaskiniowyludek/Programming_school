@@ -128,4 +128,24 @@ public class User {
             this.id=0;
         }
     }
+
+    public static User[] loadAllByGroupId(Connection conn, int user_group)throws SQLException{
+        ArrayList<User> usersInGroup = new ArrayList<User>();
+        String sql = "SELECT * FROM User WHERE user_group_id=?";
+        PreparedStatement preparedStatement;
+        preparedStatement = conn.prepareStatement(sql);
+        preparedStatement.setInt(1, user_group);
+        ResultSet rs = preparedStatement.executeQuery();
+        while (rs.next()){
+            User foundUser = new User();
+            foundUser.id = rs.getInt("id");
+            foundUser.username = rs.getString("username");
+            foundUser.email = rs.getString("email");
+            foundUser.user_group = rs.getInt("user_group_id");
+            usersInGroup.add(foundUser);
+        }
+        User[] users = new User[usersInGroup.size()];
+        users = usersInGroup.toArray(users);
+        return users;
+    }
 }

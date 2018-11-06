@@ -63,6 +63,10 @@ public class Main {
             for (User u: users){
                 System.out.println(u.getUsername()+", "+u.getEmail());
             }
+            User[] usersInGroup2 = User.loadAllByGroupId(conn,2);
+            for (User u: usersInGroup2){
+                System.out.println(u.getUsername()+", grupa: "+u.getUser_group());
+            }
         }catch (SQLException e){
             e.printStackTrace();
         }
