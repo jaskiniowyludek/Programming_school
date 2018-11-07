@@ -74,7 +74,7 @@ public class Solution {
                 String GeneretedColumns[] = {"ID"};
                 preparedStatement = conn.prepareStatement(sql, GeneretedColumns);
                 preparedStatement.setObject(1,new Timestamp(this.created.getTime()));
-                preparedStatement.setObject(2,new Timestamp(this.updated.getTime()));
+              //  preparedStatement.setObject(2,new Timestamp(this.updated.getTime()));
                 preparedStatement.setString(3, this.description);
                 preparedStatement.setInt(4,this.exercise_id);
                 preparedStatement.setInt(5, this.user_id);
@@ -88,7 +88,7 @@ public class Solution {
                         ", exercise_id=?, user_id=?	where	id	=	?";
                 PreparedStatement	preparedStatement;
                 preparedStatement	=	conn.prepareStatement(sql);
-                preparedStatement.setObject(1,new Timestamp(this.created.getTime()));
+              //  preparedStatement.setObject(1,new Timestamp(this.created.getTime()));
                 preparedStatement.setObject(2,new Timestamp(this.updated.getTime()));
                 preparedStatement.setString(3,	this.description);
                 preparedStatement.setInt(4,this.exercise_id);

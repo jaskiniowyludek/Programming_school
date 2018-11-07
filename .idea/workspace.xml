@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f75109c5-806c-4f88-a6b0-7a2bcee30edb" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/src/pl/coderslab/AdminMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/coderslab/AdminMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pl/coderslab/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/coderslab/Solution.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -71,8 +72,8 @@
       <file leaf-file-name="Solution.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pl/coderslab/Solution.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1035">
-              <caret line="91" column="45" selection-start-line="91" selection-start-column="45" selection-end-line="91" selection-end-column="45" />
+            <state relative-caret-position="345">
+              <caret line="90" column="16" selection-start-line="90" selection-start-column="16" selection-end-line="90" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -83,8 +84,8 @@
       <file leaf-file-name="AdminMain.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pl/coderslab/AdminMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="134" column="109" selection-start-line="134" selection-start-column="109" selection-end-line="134" selection-end-column="109" />
+            <state relative-caret-position="795">
+              <caret line="84" column="60" selection-start-line="84" selection-start-column="60" selection-end-line="84" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -124,8 +125,8 @@
         <option value="$PROJECT_DIR$/src/pl/coderslab/Group.java" />
         <option value="$PROJECT_DIR$/src/pl/coderslab/Exercise.java" />
         <option value="$PROJECT_DIR$/src/pl/coderslab/User.java" />
-        <option value="$PROJECT_DIR$/src/pl/coderslab/Solution.java" />
         <option value="$PROJECT_DIR$/src/pl/coderslab/Main.java" />
+        <option value="$PROJECT_DIR$/src/pl/coderslab/Solution.java" />
         <option value="$PROJECT_DIR$/src/pl/coderslab/AdminMain.java" />
       </list>
     </option>
@@ -248,12 +249,12 @@
       <workItem from="1536488361461" duration="7568000" />
       <workItem from="1541414478973" duration="18692000" />
       <workItem from="1541517002273" duration="3683000" />
-      <workItem from="1541590316473" duration="9784000" />
+      <workItem from="1541590316473" duration="12947000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42107000" />
+    <option name="totallyTimeSpent" value="45270000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1217" height="812" extended-state="6" />
@@ -269,8 +270,8 @@
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32986626" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3447251" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32986626" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3447251" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2677502" />
@@ -465,16 +466,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pl/coderslab/Solution.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1035">
-          <caret line="91" column="45" selection-start-line="91" selection-start-column="45" selection-end-line="91" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pl/coderslab/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -500,16 +491,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pl/coderslab/Exercise.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="74" column="13" selection-start-line="74" selection-start-column="13" selection-end-line="74" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pl/coderslab/Group.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="555">
@@ -520,10 +501,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/pl/coderslab/Exercise.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="960">
+          <caret line="74" column="13" selection-start-line="74" selection-start-column="13" selection-end-line="74" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pl/coderslab/Solution.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="90" column="16" selection-start-line="90" selection-start-column="16" selection-end-line="90" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/pl/coderslab/AdminMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="134" column="109" selection-start-line="134" selection-start-column="109" selection-end-line="134" selection-end-column="109" />
+        <state relative-caret-position="795">
+          <caret line="84" column="60" selection-start-line="84" selection-start-column="60" selection-end-line="84" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
