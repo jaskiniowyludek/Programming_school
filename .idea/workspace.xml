@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f75109c5-806c-4f88-a6b0-7a2bcee30edb" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pl/coderslab/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/coderslab/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pl/coderslab/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pl/coderslab/Solution.java" afterDir="false" />
-    </list>
+    <list default="true" id="f75109c5-806c-4f88-a6b0-7a2bcee30edb" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -33,7 +29,7 @@
       <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pl/coderslab/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1905">
+            <state relative-caret-position="1237">
               <caret line="151" selection-start-line="151" selection-end-line="151" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -70,11 +66,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Solution.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Solution.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pl/coderslab/Solution.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="75" column="83" selection-start-line="75" selection-start-column="83" selection-end-line="75" selection-end-column="83" />
+            <state relative-caret-position="1035">
+              <caret line="91" column="45" selection-start-line="91" selection-start-column="45" selection-end-line="91" selection-end-column="45" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AdminMain.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/pl/coderslab/AdminMain.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="861">
+              <caret line="63" column="97" selection-start-line="63" selection-start-column="97" selection-end-line="63" selection-end-column="97" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -85,11 +93,11 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pl/coderslab/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+            <state relative-caret-position="195">
+              <caret line="13" column="48" lean-forward="true" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="77" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1541592428497" expanded="true" signature="1644:1735" ph="..." />
+                <marker date="1541593192395" expanded="true" signature="1890:1981" ph="..." />
               </folding>
             </state>
           </provider>
@@ -114,8 +122,9 @@
         <option value="$PROJECT_DIR$/src/pl/coderslab/Group.java" />
         <option value="$PROJECT_DIR$/src/pl/coderslab/Exercise.java" />
         <option value="$PROJECT_DIR$/src/pl/coderslab/User.java" />
-        <option value="$PROJECT_DIR$/src/pl/coderslab/Main.java" />
         <option value="$PROJECT_DIR$/src/pl/coderslab/Solution.java" />
+        <option value="$PROJECT_DIR$/src/pl/coderslab/Main.java" />
+        <option value="$PROJECT_DIR$/src/pl/coderslab/AdminMain.java" />
       </list>
     </option>
   </component>
@@ -194,7 +203,17 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.AdminMain">
+    <configuration name="AdminMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="pl.coderslab.AdminMain" />
+      <module name="Programming_school" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.coderslab.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="pl.coderslab.Main" />
       <module name="Programming_school" />
@@ -202,8 +221,13 @@
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
     </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.AdminMain" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.AdminMain" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -222,12 +246,12 @@
       <workItem from="1536488361461" duration="7568000" />
       <workItem from="1541414478973" duration="18692000" />
       <workItem from="1541517002273" duration="3683000" />
-      <workItem from="1541590316473" duration="2412000" />
+      <workItem from="1541590316473" duration="6959000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34735000" />
+    <option name="totallyTimeSpent" value="39282000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1217" height="812" extended-state="6" />
@@ -310,7 +334,7 @@
           <caret line="67" column="80" selection-start-line="67" selection-start-column="80" selection-end-line="67" selection-end-column="80" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1541592428497" expanded="true" signature="1644:1735" ph="..." />
+            <marker date="1541593192395" expanded="true" signature="1890:1981" ph="..." />
           </folding>
         </state>
       </provider>
@@ -365,7 +389,7 @@
           <caret line="48" column="31" selection-start-line="48" selection-start-column="31" selection-end-line="48" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1541592428497" expanded="true" signature="1644:1735" ph="..." />
+            <marker date="1541593192395" expanded="true" signature="1890:1981" ph="..." />
           </folding>
         </state>
       </provider>
@@ -410,7 +434,7 @@
           <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1541592428497" expanded="true" signature="1644:1735" ph="..." />
+            <marker date="1541593192395" expanded="true" signature="1890:1981" ph="..." />
           </folding>
         </state>
       </provider>
@@ -452,9 +476,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$USER_HOME$/Downloads/mysql-connector-java_8.0.11-1ubuntu16.04_all/usr/share/java/mysql-connector-java-8.0.11.jar!/com/mysql/cj/jdbc/exceptions/SQLError.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="77" selection-start-line="77" selection-end-line="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pl/coderslab/Solution.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1035">
+          <caret line="91" column="45" selection-start-line="91" selection-start-column="45" selection-end-line="91" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pl/coderslab/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="48" lean-forward="true" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="77" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1541593192395" expanded="true" signature="1890:1981" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/pl/coderslab/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1905">
+        <state relative-caret-position="1237">
           <caret line="151" selection-start-line="151" selection-end-line="151" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -466,28 +518,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pl/coderslab/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/pl/coderslab/AdminMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1541592428497" expanded="true" signature="1644:1735" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Downloads/mysql-connector-java_8.0.11-1ubuntu16.04_all/usr/share/java/mysql-connector-java-8.0.11.jar!/com/mysql/cj/jdbc/exceptions/SQLError.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="77" selection-start-line="77" selection-end-line="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pl/coderslab/Solution.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="75" column="83" selection-start-line="75" selection-start-column="83" selection-end-line="75" selection-end-column="83" />
+        <state relative-caret-position="861">
+          <caret line="63" column="97" selection-start-line="63" selection-start-column="97" selection-end-line="63" selection-end-column="97" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
