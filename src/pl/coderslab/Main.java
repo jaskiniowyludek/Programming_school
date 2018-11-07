@@ -1,8 +1,11 @@
 package pl.coderslab;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.time.Instant;
+import java.time.LocalDateTime;
 
 public class Main {
 
@@ -10,17 +13,28 @@ public class Main {
 
         try(Connection conn = SQLHelper.connect("programming_school_database")){
 
-        //adding group to DB works!
+            //ADDING SOLUTION WORKS!!
+            Solution solution1 = new Solution();
+            solution1.setDescription("to jest rozwiązanie jakieśtam2");
+            solution1.setUser(1);
+            solution1.setExercise(2);
+            solution1.saveToDb(conn);
+            //LOAD ALL SOLUTIONS
+            Solution[] solutions = Solution.loadAllSolutions(conn);
+            for (Solution s: solutions){
+                System.out.println("Created: "+s.getCreated()+" id: "+s.getId());
+            }
+            //adding group to DB works!
         Group group1 = new Group();
-        group1.setName("grupa pierwsza");
+        group1.setName("grupa nowa");
         group1.saveToDB(conn);
         //finding group in DB works!
         Group foundG = Group.loadGroupById(conn,1);
         System.out.println("Nazwa grupy: "+foundG.getName());
         //adding exercise to DB works!
         Exercise exercise1 = new Exercise();
-        exercise1.setTitle("Dodawanie");
-        exercise1.setDescription("Dodawania 2 i 2");
+        exercise1.setTitle("Odejmowanie");
+        exercise1.setDescription("Odejmowanie 2 i 2");
         exercise1.saveToDB(conn);
         //finding exercise in DB works!
         Exercise foundEx = Exercise.loadById(conn,1);

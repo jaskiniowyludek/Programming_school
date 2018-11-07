@@ -1,13 +1,13 @@
 package pl.coderslab;
 
 import java.sql.*;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Solution {
         private  int id;
-        private Date created;
-        private Date updated;
+        private java.util.Date created = new Date();
+        private java.util.Date updated = new Date();
         private String description;
         private int exercise_id;
         private int user_id;
@@ -15,7 +15,7 @@ public class Solution {
         public Solution(){
         }
 
-    public Solution(int id, Date created, Date updated, String description, int exercise_id, int user_id) {
+    public Solution(int id, java.util.Date created, java.util.Date updated, String description, int exercise_id, int user_id) {
         this.id = id;
         this.created = created;
         this.updated = updated;
@@ -27,15 +27,15 @@ public class Solution {
     public int getId(){
             return id;
     }
-    public Date getCreated() {
+    public java.util.Date getCreated() {
         return created;
     }
 
-    public void setCreated(Date created) {
+    public void setCreated(java.util.Date created) {
         this.created = created;
     }
 
-    public Date getUpdated() {
+    public java.util.Date getUpdated() {
         return updated;
     }
 
@@ -73,8 +73,8 @@ public class Solution {
                 PreparedStatement preparedStatement;
                 String GeneretedColumns[] = {"ID"};
                 preparedStatement = conn.prepareStatement(sql, GeneretedColumns);
-                preparedStatement.setDate(1,this.created);
-                preparedStatement.setDate(2, this.updated);
+                preparedStatement.setObject(1,new Timestamp(this.created.getTime()));
+                preparedStatement.setObject(2,new Timestamp(this.updated.getTime()));
                 preparedStatement.setString(3, this.description);
                 preparedStatement.setInt(4,this.exercise_id);
                 preparedStatement.setInt(5, this.user_id);
@@ -88,8 +88,8 @@ public class Solution {
                         ", exercise_id=?, user_id=?	where	id	=	?";
                 PreparedStatement	preparedStatement;
                 preparedStatement	=	conn.prepareStatement(sql);
-                preparedStatement.setDate(1,this.created);
-                preparedStatement.setDate(2, this.updated);
+                preparedStatement.setObject(1,new Timestamp(this.created.getTime()));
+                preparedStatement.setObject(2,new Timestamp(this.updated.getTime()));
                 preparedStatement.setString(3,	this.description);
                 preparedStatement.setInt(4,this.exercise_id);
                 preparedStatement.setInt(5, this.user_id);
@@ -106,8 +106,8 @@ public class Solution {
         while (resultSet.next()){
             Solution loadedSOL = new Solution();
             loadedSOL.id= resultSet.getInt("id");
-            loadedSOL.created = resultSet.getDate("created");
-            loadedSOL.updated = resultSet.getDate("updated");
+            loadedSOL.created = resultSet.getTimestamp("created");
+            loadedSOL.updated = resultSet.getTimestamp("updated");
             loadedSOL.description = resultSet.getString("description");
             loadedSOL.user_id = resultSet.getInt("user_id");
             loadedSOL.exercise_id = resultSet.getInt("exercise_id");
@@ -127,8 +127,8 @@ public class Solution {
         if (resultSet.next()){
             Solution loadedSOL = new Solution();
             loadedSOL.id= resultSet.getInt("id");
-            loadedSOL.created = resultSet.getDate("created");
-            loadedSOL.updated = resultSet.getDate("updated");
+            loadedSOL.created = resultSet.getTimestamp("created");
+            loadedSOL.updated = resultSet.getTimestamp("updated");
             loadedSOL.description = resultSet.getString("description");
             loadedSOL.user_id = resultSet.getInt("user_id");
             loadedSOL.exercise_id = resultSet.getInt("exercise_id");
@@ -158,8 +158,8 @@ public class Solution {
             while (rs.next()){
                 Solution foundS = new Solution();
                 foundS.id = rs.getInt("id");
-                foundS.created = rs.getDate("created");
-                foundS.updated = rs.getDate("updated");
+                foundS.created = rs.getTimestamp("created");
+                foundS.updated = rs.getTimestamp("updated");
                 foundS.description = rs.getString("description");
                 foundS.user_id = rs.getInt("user_id");
                 foundS.exercise_id = rs.getInt("exercise_id");
@@ -177,8 +177,8 @@ public class Solution {
         while (rs.next()){
             Solution foundS = new Solution();
             foundS.id = rs.getInt("id");
-            foundS.created = rs.getDate("created");
-            foundS.updated = rs.getDate("updated");
+            foundS.created = rs.getTimestamp("created");
+            foundS.updated = rs.getTimestamp("updated");
             foundS.description = rs.getString("description");
             foundS.user_id = rs.getInt("user_id");
             foundS.exercise_id = rs.getInt("exercise_id");
