@@ -9,14 +9,130 @@ public class AdminMain {
 
     public static void main(String[] args) throws SQLException {
         try (Connection conn = SQLHelper.connect("programming_school_database")){
+            Scanner scan = new Scanner(System.in);
+            String command = "";
+            do {
+                System.out.println("Type option's code to choose one of the options: user - to go to user panel," +
+                        " exercise - to go to exericise panel, group - to go to group panel. Type \"quit\"" +
+                        "if you want to exit");
+                command=scan.nextLine();
+                if (command.equals("user")){
+                    userFuncionalities();
+                }else if (command.equals("exercise")){
+                    exerciseFuncionalities();
+                }else if(command.equals("group")){
+                    groupFuncionallities();
+                }else if(command.equals("quit")){
+
+                }
+                else System.out.println("Type: \"user\", \"exercise\", \"group\" or \"quit\"!");
+            }
+            while (!command.equals("quit"));
+        }catch (SQLException e){
+            System.out.println(e.getErrorCode());
+        }
+    }
+
+    public static void groupFuncionallities()throws SQLException{
+        try (Connection conn = SQLHelper.connect("programming_school_database")){
+            Group[] groups = Group.loadAllGroups(conn);
+            System.out.println("List of all the groups:");
+            for (Group g: groups){
+                System.out.println("Id: "+g.getId()+", name: "+g.getName());
+            }
+            System.out.println("Type option's code to choose one of the options: add - to add user," +
+                    " edit - to edit user, delete - to delete user. Type \"quit\" to go back to the homepage MENU");
+            Scanner scan = new Scanner(System.in);
+            String command = "";
+            do {
+                command=scan.nextLine();
+                if (command.equals("add")){
+                    Group group = new Group();
+                    System.out.println("Type group's name: ");
+                    group.setName(scan.nextLine());
+                    group.saveToDB(conn);
+                    System.out.println("New group added to database!");
+                }else if (command.equals("edit")){
+                    System.out.println("Type id: ");
+                    int id = scan.nextInt();
+                    Group group = Group.loadGroupById(conn, id);
+                    System.out.println("Type group's name: ");
+                    group.setName(scan.nextLine());
+                    group.saveToDB(conn);
+                    System.out.println("Group modified successfully!");
+                }else if (command.equals("delete")){
+                    System.out.println("Type id: ");
+                    int id = scan.nextInt();
+                    Group group = Group.loadGroupById(conn, id);
+                    group.delete(conn);
+                    System.out.println("Group deleted!!");
+                }else if(command.equals("quit")){
+
+                }
+                else System.out.println("Type: add, edit, delete or quit!");
+            }while (!command.equals("quit"));
+        }catch (SQLException e){
+            System.out.println(e.getErrorCode());
+        }
+    }
+
+    public static void exerciseFuncionalities() throws SQLException{
+        try (Connection conn = SQLHelper.connect("programming_school_database")){
+            Exercise[] exercises = Exercise.loadAllExercise(conn);
+            System.out.println("List of all exercises: ");
+            for (Exercise e: exercises){
+                System.out.println("Id: "+e.getId()+", title: "+e.getTitle()+", description: "+e.getDescription());
+            }
+            System.out.println("Type option's code to choose one of the options: add - to add user," +
+                    " edit - to edit user, delete - to delete user. Type \"quit\" to go back to homepage MENU");
+            Scanner scan = new Scanner(System.in);
+            String command = "";
+            do {
+                command=scan.nextLine();
+                if (command.equals("add")){
+                    Exercise exercise = new Exercise();
+                    System.out.println("Type title: ");
+                    exercise.setTitle(scan.nextLine());
+                    System.out.println("Type description: ");
+                    exercise.setDescription(scan.nextLine());
+                    exercise.saveToDB(conn);
+                    System.out.println("Exercise added to database!");
+                }else if (command.equals("edit")){
+                    System.out.println("Type id: ");
+                    int id = scan.nextInt();
+                    Exercise exercise = Exercise.loadById(conn, id);
+                    System.out.println("Type title: ");
+                    exercise.setTitle(scan.nextLine());
+                    System.out.println("Type description: ");
+                    exercise.setDescription(scan.nextLine());
+                    exercise.saveToDB(conn);
+                    System.out.println("Exercise modified successfully!");
+                }else if (command.equals("delete")){
+                    System.out.println("Type id: ");
+                    int id = scan.nextInt();
+                    Exercise exercise = Exercise.loadById(conn, id);
+                    exercise.delete(conn);
+                    System.out.println("Exercise deleted!!");
+                }else if(command.equals("quit")){
+
+                }
+                else System.out.println("Type: add, edit, delete or quit!");
+            }while (!command.equals("quit"));
+        }catch (SQLException e){
+            System.out.println(e.getErrorCode());
+        }
+    }
+
+    public static void userFuncionalities()throws SQLException{
+        try (Connection conn = SQLHelper.connect("programming_school_database")){
             User[] users = User.loadAllUsers(conn);
             System.out.println("List of all users: ");
             for (User u: users){
                 System.out.println("Id: "+u.getId()+", username: "+u.getUsername()+", email: "+u.getEmail()+
-                "user group: "+u.getUser_group());
+                        ", user group: "+u.getUser_group());
             }
             System.out.println("Type option's code to choose one of the options: add - to add user," +
-                    " edit - to edit user, delete - to delete user. Type \"quit\" to exit");
+                    " edit - to edit user, delete - to delete user. Type \"quit\" to go back to homepage MENU");
             Scanner scan = new Scanner(System.in);
             String command = "";
             do {
